@@ -23,6 +23,7 @@
   zoom.scale(1);
   zoom.scaleExtent([0.1, 10]);
   zoom.size([frameWidth, frameHeight]);
+  zoom.center([frameWidth / 2, frameHeight / 2]);
 
   zoom.on('zoom.move', function() {
     var x, y, scale, transform;
@@ -115,7 +116,7 @@
     ctx.drawImage(
       offscreen,
       srcX, srcY, srcW, srcH,
-      destX, destY, destW, destH
+      destX, destY, destW * 2, destH * 2
     );
   });
 
